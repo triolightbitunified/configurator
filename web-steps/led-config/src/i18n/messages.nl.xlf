@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="e70b01a3a6c079713ca1f6aa66082cec711f4ac1" datatype="html">
+        <source>
+                    Warning: <x id="INTERPOLATION"/>
+                  </source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">C:/data/projects/led-config/web-steps/led-config/src/app/components/menustepitem/menustepitem.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="17bd9be5b8f0f24b602da92ebb10dfd7396e475d" datatype="html">
+        <source>
+                    Information: <x id="INTERPOLATION"/>
+                  </source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">C:/data/projects/led-config/web-steps/led-config/src/app/components/menustepitem/menustepitem.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="07233bb960b6668bea035ea9a7168ce03d691937" datatype="html">
+        <source>
+                Description: <x id="INTERPOLATION"/>
+
+              </source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">C:/data/projects/led-config/web-steps/led-config/src/app/components/menustepitem/menustepitem.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="15dfad31ffc4e0d3590e46c15d46b2cfec0f728a" datatype="html">
+        <source>
+                Width: <x id="INTERPOLATION"/> mm
+              </source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">C:/data/projects/led-config/web-steps/led-config/src/app/components/menustepitem/menustepitem.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

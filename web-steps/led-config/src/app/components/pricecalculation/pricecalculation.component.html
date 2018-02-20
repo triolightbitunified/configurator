@@ -1,0 +1,55 @@
+<h2 mat-dialog-title>Price overview</h2>
+<mat-dialog-content>
+
+  <mat-card class="priceTable">
+
+    <mat-card-header>
+      <mat-card-title>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        Total: € {{priceCalculation.totalPrice}}
+      </div>
+
+
+      <div>
+        <mat-table #table [dataSource]="dataSource">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- ID Column -->
+          <ng-container cdkColumnDef="id">
+            <mat-header-cell *cdkHeaderCellDef>Art. number</mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.id}}</mat-cell>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container cdkColumnDef="description">
+            <mat-header-cell *cdkHeaderCellDef>Description</mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.description}}</mat-cell>
+          </ng-container>
+
+          <ng-container cdkColumnDef="price">
+            <mat-header-cell *cdkHeaderCellDef>Unit price</mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.price}}</mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container cdkColumnDef="amount">
+            <mat-header-cell *cdkHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.amount}}</mat-cell>
+          </ng-container>
+
+          <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-raised mat-dialog-close>Close</button>
+</mat-dialog-actions>

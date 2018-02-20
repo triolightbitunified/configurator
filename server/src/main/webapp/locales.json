@@ -1,0 +1,31 @@
+{
+  "nl":{
+    "validate.form.product.code": "Productcode opgeven",
+    "validate.form.product.example": "Productcode voorbeeld: xxx",
+    "validate.form.validate":"Valideer",
+    "validate.form.invalidcode":"Ongeldige code",
+    "validate.form.code":"Productcode",
+    "validate.response.messages":"Berichten:",
+    "validate.response.step":"Stap",
+    "validate.response.configuration":"Configuratie",
+    "validate.response.error.message":"De configuratie bevat fouten. Corrigeer de configuratie.",
+    "validate.response.correct.message":"De productcode is correct.",
+    "validate.response.total":"Totaal",
+    "validate.response.partlist.title":"Artikelen",
+    "validate.response.partlist.id":"Artikelnummer",
+    "validate.response.partlist.description":"Omschrijving",
+    "validate.response.partlist.amount":"Aantal",
+    "validate.response.partlist.button.close":"OK",
+    "validate.response.partlist.button.print":"Print",
+    "validate.response.partlist.button":"Onderdelen",
+    "validate.response.assembly.title":"Assemblage instructies",
+    "validate.response.assembly.description":"Omschrijving",
+    "validate.response.back.button":"Terug",
+    "validate.response.error.unknown":"Er is een onbekende fout opgetreden"
+  },
+  "en": {
+    "validate.form.product.code": "Fill in the productcode",
+    "validate.form.validate":"Validate",
+    "validate.form.invalidcode":"Invalid code"
+  }
+}

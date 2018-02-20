@@ -1,0 +1,90 @@
+.mat-slider-horizontal {
+  width: 60%;
+}
+
+.mat-slider-vertical {
+  height: 300px;
+}
+
+.labelTab{
+  overflow:auto;
+  /*font-size:1.1em;*/
+  font-weight: bold;
+}
+.warningChip{
+    background-color: orange;
+
+}
+.gridContainer{
+  grid-template-columns: 500px 500px;
+  grid-template-rows: repeat( 4, 350px);
+}
+
+.stepPrevCard .mat-card{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: flex;
+  width:400px;
+}
+
+.stepButtonReset
+{
+  display:grid;
+  margin-top:20px;
+}
+.descriptionPanel{
+  height: 175px;
+}
+.loadingSpinner{
+  margin: 0 10px;
+}
+.stepchip{
+  margin-left: 75px;
+}
+.infoCard{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  height:150px;
+  width: 550px;
+}
+.stepCard {
+  width:300px;
+  padding: 10px;
+}
+
+.f2{
+  grid-column: 1 ;
+  grid-row: 3;
+}
+
+.selectBoxContainer{
+  min-width: 300px;
+}
+
+.itemModel{
+  display: flex;
+}
+
+.mat-input-flex {
+  min-width: 300px;
+}
+.mat-input-wrapper{
+  min-width: 300px;
+}
+.selectContainer{
+  min-width:300px;
+}
+
+.customMoreButton{
+  height: 24px;
+  font-size: x-small;
+  line-height: inherit;
+}
+.optionalChecker{
+  margin-bottom: 15px;
+}
+
+.mat-select-panel .widthPanel {
+  min-width: 300px;
+}

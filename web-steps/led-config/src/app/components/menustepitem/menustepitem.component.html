@@ -1,0 +1,122 @@
+<script src="menustepitem.component.ts"></script>
+
+
+<div class="gridContainer">
+  <div *ngIf="true" class="itemModel">
+    <div>
+      <mat-card class="stepCard">
+        <!--   <mat-card-header>
+             <mat-card-title>
+               <mat-chip-list>
+                 <mat-chip class="stepchip">{{step.description}} {{step.skippable?" - optional":""}}
+
+
+                 </mat-chip>
+
+
+               </mat-chip-list>
+             </mat-card-title>
+             <mat-card-subtitle></mat-card-subtitle>
+           </mat-card-header>
+ -->
+        <mat-card-content>
+          <div>
+            <div *ngIf="isStepTypeValues(step) && !skippable">
+
+
+                <mat-form-field>
+                  <mat-select class="selectContainer" panelClass="widthPanel" placeholder="Select {{step.configDescription}} {{step.skippable?' optional':''}}"
+                              (onClose)="changeSelect($event)"
+                              [(ngModel)]="m"
+                              [ngModelOptions]="{standalone: true}"
+                              overlayDir="bottom">
+                    <mat-option *ngFor="let m of filteredModels;let i=index;" [value]="m" class="selectOption">
+                      <div>{{ getModelName(m) }}</div>
+
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+              <div *ngIf="checkResetButton()" class="stepButtonReset">
+                <button mat-raised-button (click)="reset()">Reset</button>
+              </div>
+
+            </div>
+
+            <div *ngIf="isStepTypeNumber(step)">
+
+              Click on line to select {{step.configDescription}}<br/>
+              Width:
+              <mat-slider class="mat-slider-horizontal"
+                          [max]="calculateMaxValue(step)"
+                          [min]="calculateMinValue(step)"
+                          [step]="calculateStepValue(step)"
+                          thumb-label="true" [(ngModel)]="step.modelValue" name="inputValue"
+                          (ngModelChange)="onInputChange($event)">
+              </mat-slider>
+              mm.
+
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+
+    </div>
+
+    <div class="descriptionPanel" *ngIf="m">
+      <mat-card class="infoCard" *ngIf="!skippable">
+
+        <mat-card-header *ngIf="(currentPart | async); let part; else loading">
+
+          <div mat-card-avatar *ngIf="getImageUrl(m,part)!=null" class="detailedImage"
+               [style.background-image]="'url(' + getImageUrl(m,part) + ')'" [style.background-size]="cover"
+               [style.width]="'150px'" [style.height]="'150px'">
+
+          </div>
+
+        </mat-card-header>
+        <ng-template #loading>
+
+              <mat-spinner></mat-spinner>
+
+        </ng-template>
+
+
+        <mat-card-content>
+          <div *ngIf="m">
+            <mat-list dense>
+
+              <mat-list-item i18n>
+                Description: {{getModelName(m)}}
+
+              </mat-list-item>
+              <mat-list-item *ngIf="m.maxDimension!=null && m.maxDimension.width!=null" i18n>
+                Max. length: {{m.maxDimension==null?'':m.maxDimension.width}} mm
+              </mat-list-item>
+              <div *ngIf="showPrice()">
+                <mat-list-item *ngIf="(currentPart | async); let part">
+                  <div *ngIf="part.price; else contentNoPrice">
+                    Price: {{((evaluatePrice(part))) | currency:'EUR':true}} ({{getDescriptionFromPart(part)}})
+                  </div>
+                  <ng-template #contentNoPrice>
+                    No price information available.
+                  </ng-template>
+                </mat-list-item>
+              </div>
+              <mat-list-item i18n *ngIf="m.productPage">
+                <a href="{{m.productPage}}" target="_blank" mat-raised-button mat-raised mat-warn
+                   class="customMoreButton" [style.line-height]="'22px'" target="_blank">more information</a>
+
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+
+  </div>
+
+</div>
+

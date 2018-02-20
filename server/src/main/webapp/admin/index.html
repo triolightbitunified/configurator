@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Administration</title>
+    <script>
+        function disableButtons() {
+            document.getElementById('updatedata').disabled = true;
+            document.getElementById('updaterules').disabled = true;
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <form action="../rest/admin/data" method="post" onsubmit="disableButtons()">
+
+        <input type="submit" id="updatedata" value="Update data"/>
+    </form>
+    <br/>
+    <form action="../rest/admin/rules" method="post" onsubmit="disableButtons()">
+
+        <input type="submit" id="updaterules" value="Update rules"/>
+    </form>
+<br/>
+    Disclaimer: If incorrect or inconsistent configuration has been uploaded, the application may malfunction or fail to start.
+</div>
+
+</body>
+</html>

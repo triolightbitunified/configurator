@@ -1,0 +1,8 @@
+<div *ngIf="stepsall">
+  <menustepitem *ngFor="let step of stepsall.steps; let i = index" [step]="step" [currentStep]="currentStep">
+  </menustepitem>
+  <div *ngIf="checkFinish(currentStep)" class="finishButtons">
+  <button color="warn" *ngIf="showPrice()" mat-raised-button  (click)="finish()">Price overview</button>
+  <button color="warn" mat-raised-button ngxClipboard [cbContent]="productcode">Copy {{productcode}} to clipboard</button>
+  </div>
+</div>

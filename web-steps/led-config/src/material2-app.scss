@@ -1,0 +1,135 @@
+//@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// NOTE: Theming is currently experimental and not yet publically released!
+
+//@include mat-core();
+//
+//$primary: mat-palette($mat-deep-purple);
+//$accent:  mat-palette($mat-amber, A200, A100, A400);
+//
+//$theme: mat-light-theme($primary, $accent);
+//
+//@include angular-material-theme($theme);
+//
+//.m2app-dark {
+//  $dark-primary: mat-palette($mat-pink, 700, 500, 900);
+//  $dark-accent:  mat-palette($mat-blue-grey, A200, A100, A400);
+//  $dark-warn:    mat-palette($mat-deep-orange);
+//
+//  $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+//
+//  @include angular-material-theme($dark-theme);
+//}
+
+// Import theming functions
+@import '~@angular/material/theming';
+// Import your custom theme
+//@import 'src/unicorn-app-theme.scss';
+
+// Use mat-color to extract individual colors from a palette as necessary.
+//.candy-carousel {
+//  background-color: mat-color($app-primary);
+//  border-color: mat-color($candy-app-accent, A400);
+//}
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$mat-mcgpalette0: (
+  50 : #fdeee5,
+  100 : #fad4bd,
+  200 : #f7b891,
+  300 : #f39b65,
+  400 : #f18544,
+  500 : #ee7023,
+  600 : #ec681f,
+  700 : #e95d1a,
+  800 : #e75315,
+  900 : #e2410c,
+  A100 : #ffffff,
+  A200 : #ffe1da,
+  A400 : #ffb9a7,
+  A700 : #ffa58d,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+@mixin select-smaller($theme) {
+
+  .mat-option{
+
+    height: 18px;
+    line-height:18px;
+
+  }
+  .mat-option{
+    height: 18px;
+    line-height:18px;
+  }
+  .mat-select-panel .widthPanel {
+    min-width: 300px;
+  }
+}
+
+@mixin steps-smaller($theme){
+  .mat-card .stepCard {
+  padding: 14px;
+  }
+  .mat-card .infoCard {
+    padding: 14px;
+  }
+}
+//@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow');
+//@import url('/assets/fonts/css?family=Pontano+Sans');
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+$font-family: 'PT Sans, sans-serif'
+);
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$candy-app-primary: mat-palette($mat-mcgpalette0, 500);
+$candy-app-accent:  mat-palette($mat-mcgpalette0, 500, A200, A700);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat-core-theme($candy-app-theme);
+@include angular-material-theme($candy-app-theme);
+@include select-smaller($candy-app-theme);
+@include steps-smaller($candy-app-theme);

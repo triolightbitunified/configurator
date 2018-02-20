@@ -1,0 +1,49 @@
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav mode="side" class="app-sidenav" style="width:10%">
+    <mat-list>
+      <mat-list-item> Productcode</mat-list-item>
+      <mat-list-item><h4>{{productcode}}</h4></mat-list-item>
+
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-toolbar class="mainTitle">
+
+    Aeris Configurator - step by step<img src="assets/images/company_logo.jpg" class="imageHeader"/>
+    <div class="small-product-code" *ngIf="productcode">Productcode: {{productcode}}</div>
+    <span class="app-toolbar-filler"></span>
+    <mat-list dense class="listProperties">
+      <mat-list-item
+        *ngIf="productWarning!=null && productWarning.message!=null && productWarning.relationState==AllowedWithWarning">
+        <mat-chip-list class="mat-chip-list-stacked">
+          <mat-chip class="warningChip"
+                   selected="true"
+                   color="warn" i18n>
+            Warning: {{productWarning.message}}
+          </mat-chip>
+        </mat-chip-list>
+
+
+      </mat-list-item>
+      <mat-list-item *ngIf="productWarning!=null && productWarning.message!=null && productWarning.relationState==AllowedWithInfo">
+        <mat-chip-list class="mat-chip-list-stacked">
+          <mat-chip class="warningChip"
+                   selected="true"
+                   color="primary" i18n>
+            Information: {{productWarning.message}}
+          </mat-chip>
+        </mat-chip-list>
+
+
+      </mat-list-item>
+    </mat-list>
+  </mat-toolbar>
+
+  <div class="app-content">
+    <mat-card class="mainCard">
+      <menusteps [steps]="steps" [relations]="relations" (finished)="finished($event)"></menusteps>
+    </mat-card>
+  </div>
+
+</mat-sidenav-container>
